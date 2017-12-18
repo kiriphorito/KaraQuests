@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/request', 'SearchController@index');
+
+Route::resource('songs' , 'SongsController');
+Route::resource('requests' , 'RequestsController');
