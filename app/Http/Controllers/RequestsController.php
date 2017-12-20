@@ -16,7 +16,7 @@ class RequestsController extends Controller
     public function index()
     {
         $requests = DB::table('request_songs')
-                        ->select('request_songs.id', 'request_songs.requester','songs.*')
+                        ->select('request_songs.id', 'request_songs.requester', 'request_songs.created_at','songs.song_name', 'artist','origin')
                         ->join('songs','request_songs.song_id','=','songs.id')
                         ->get();
         return view('pages.requests')->with('requests', $requests);
@@ -29,7 +29,12 @@ class RequestsController extends Controller
      */
     public function create()
     {
-        //
+        return view('requests.create');
+    }
+
+    public function precreate($id)
+    {
+        return view('requests.precreate')->with('id',$id);
     }
 
     /**
@@ -40,7 +45,17 @@ class RequestsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'song_id' => 'required',
+            'requester' => 'required'
+        ]);
+
+        $newrequest = new Request_song;
+        $newrequest->song_id = $request->input('song_id');
+        $newrequest->requester = $request->input('requester');
+        $newrequest->save();
+
+        return redirect('/requests');
     }
 
     /**

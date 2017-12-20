@@ -10,7 +10,7 @@
         <th scope="col">Song Name</th>
         <th scope="col">Artist</th>
         <th scope="col">Origin</th>
-        <th scope="col">Added On</th>
+        <th scope="col">Requested At</th>
         </tr>
     </thead>
     <tbody>

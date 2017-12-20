@@ -16,6 +16,11 @@ Route::get('/', function () {
 });
 
 Route::get('/request', 'SearchController@index');
+Route::get('/search', 'SearchController@search');
+Route::get('requests/precreate/{id}', 'RequestsController@precreate');
+
+Route::get('/csv_upload', 'ImportsController@csv_upload');
+Route::post('/csv_add', 'ImportsController@csv_add');
 
 Route::resource('songs' , 'SongsController');
 Route::resource('requests' , 'RequestsController');
