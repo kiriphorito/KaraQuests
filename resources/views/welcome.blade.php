@@ -81,8 +81,16 @@
                 <div class="title m-b-md">
                     KaraQuests
                 </div>
-
-                
+                <strong><p>Pick your songs!</p></strong>
+                <br>
+                 <div class="links">
+                    <a href="/songs">Songs</a>
+                    <a href="/request">Request a Song</a>
+                    <a href="/requests">REquests</a>
+                </div>
+                <br><br><br>
+                <strong><p>UCL Anime Society Karaoke</p></strong>
+                <strong><p>20/12/2017 - Foster Court 233</p></strong>
             </div>
         </div>
     </body>

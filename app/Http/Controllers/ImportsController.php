@@ -16,7 +16,7 @@ class ImportsController extends Controller
     public function csv_add(Request $request){
         $upload=$request->file('file');
         $filePath=$upload->getRealPath();
-        //open and read
+        // Open
         $file=fopen($filePath, 'r');
 
         $header= fgetcsv($file);
@@ -31,5 +31,7 @@ class ImportsController extends Controller
             }
             fclose ( $handle );
         }
+
+        return redirect('/request')->with('success','CSV has been added');
     }
 }

@@ -1,4 +1,6 @@
 @extends('layouts.app')
+@extends('layouts.navbar')
+
 @section('content')
     <h1>Request</h1>
     {!! Form::open(['action' => 'RequestsController@store', 'method' => 'POST']) !!}
@@ -8,6 +10,6 @@
         {{Form::label('requester', 'Requester')}}
         {{Form::text('requester', '',['class' => 'form-control', 'placeholder' => 'Requester'])}}
     </div>
-    {{Form::submit('Sumbit', ['class' => 'btn btn-primary'])}}
+    {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
     {!! Form::close() !!}
 @endsection

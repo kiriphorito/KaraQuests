@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Request_song;
+use App\Song;
 use DB;
 
 class RequestsController extends Controller
@@ -34,7 +35,13 @@ class RequestsController extends Controller
 
     public function precreate($id)
     {
-        return view('requests.precreate')->with('id',$id);
+        // $chosenSong = DB::table('songs')
+        //                     ->select('songs.*')
+        //                     ->where('songs.id','=',$id)
+        //                     ->get();
+        $chosenSong = Song::find($id);
+        // $chosenSong = $chosenSong->toArray();
+        return view('requests.precreate')->with('chosenSong',$chosenSong);
     }
 
     /**
@@ -55,7 +62,7 @@ class RequestsController extends Controller
         $newrequest->requester = $request->input('requester');
         $newrequest->save();
 
-        return redirect('/requests');
+        return redirect('/requests')->with('success','Your request has been added!');
     }
 
     /**

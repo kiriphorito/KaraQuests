@@ -15,6 +15,8 @@ class SearchController extends Controller
         if($request->ajax()){
             $output="";
             $foundSongs=DB::table('songs')->where('song_name','LIKE','%'.$request->search."%")
+                                            ->orwhere('artist','LIKE','%'.$request->search."%")
+                                            ->orwhere('origin','LIKE','%'.$request->search."%")
                                             ->get();
     
             if($foundSongs){
