@@ -8,6 +8,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
         <title>{{config('app.name','KaraQuests')}}</title>
         <meta name="_token" content="{{ csrf_token() }}">
+        @yield('header')
     </head>
     <body>
         <div class="container">
