@@ -26,7 +26,7 @@ class ImportsController extends Controller
                 $csv_data = new Song ();
                 $csv_data->song_name = $data [0];
                 $csv_data->artist = $data [1];
-                $csv_data->origin = "N/A";
+                $csv_data->origin = $data [2];
                 $csv_data->save ();
             }
             fclose ( $handle );
