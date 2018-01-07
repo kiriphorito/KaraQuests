@@ -27,6 +27,7 @@ Route::resource('songs' , 'SongsController');
 Route::get('/admin', 'AdminController@index');
 Route::get('/admin/removefirst', 'AdminController@clearfirst');
 Route::get('/admin/removerequests', 'AdminController@clearrequests');
+Route::get('/admin/removesongs', 'AdminController@clearsongs');
 
 Route::get('requests/precreate/{id}', 'RequestsController@precreate');
 Route::resource('requests' , 'RequestsController');

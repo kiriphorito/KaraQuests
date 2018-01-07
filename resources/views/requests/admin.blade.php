@@ -17,6 +17,6 @@
         <a class="btn btn-primary" href="/admin/removefirst" role="button">Remove Top Request</a>
         <a class="btn btn-primary" href="/admin/removerequests" role="button">Remove All Requests</a>
         <a class="btn btn-primary" href="/csv_upload" role="button">Add Songs Via CSV</a>
-        <a class="btn btn-primary" href="#" role="button">Remove All Songs</a>
+        <a class="btn btn-primary" href="/admin/removesongs" role="button">Remove All Songs</a>
     </center>
 @endsection

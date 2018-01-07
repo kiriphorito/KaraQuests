@@ -28,6 +28,12 @@ class AdminController extends Controller
     public function clearrequests()
     {
         DB::table('request_songs')->truncate();
-        return redirect('/admin')->with('success','All requests have been removed');;
+        return redirect('/admin')->with('success','All requests have been removed');
+    }
+
+    public function clearsongs()
+    {
+        DB::table('songs')->truncate();
+        return redirect('/admin')->with('success','All songs have been removed');
     }
 }
