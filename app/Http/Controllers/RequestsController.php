@@ -16,11 +16,16 @@ class RequestsController extends Controller
      */
     public function index()
     {
+        return view('pages.requests');
+    }
+
+    public function getdata()
+    {
         $requests = DB::table('request_songs')
                         ->select('request_songs.id', 'request_songs.requester', 'request_songs.created_at','songs.song_name', 'artist','origin')
                         ->join('songs','request_songs.song_id','=','songs.id')
                         ->get();
-        return view('pages.requests')->with('requests', $requests);
+        return view('pages.getrequests')->with('requests', $requests);
     }
 
     /**

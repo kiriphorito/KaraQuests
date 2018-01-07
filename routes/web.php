@@ -30,4 +30,5 @@ Route::get('/admin/removerequests', 'AdminController@clearrequests');
 Route::get('/admin/removesongs', 'AdminController@clearsongs');
 
 Route::get('requests/precreate/{id}', 'RequestsController@precreate');
+Route::get('requests/gettable', 'RequestsController@getdata');
 Route::resource('requests' , 'RequestsController');
