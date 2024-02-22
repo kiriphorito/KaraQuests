@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  mysql:
+    container_name: comparison-mysql
+    image: mysql:8.3.0
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=karaquests
+      
