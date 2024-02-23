@@ -8,9 +8,10 @@ This project was first made with the intention to work with UltraStar and anothe
 We need a MySql database for this application to work. This can be achieved with docker command:  
     docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=karaquests -p 3306:3306 -d mysql  
 
-Or you can do `docker compose up`
+Or you can do `docker compose up -d`
 
 ## How to Run
     composer install  
     php artisan key:generate  
     php artisan migrate  
+    php artisan serve
