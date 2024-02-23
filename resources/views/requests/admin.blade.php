@@ -4,7 +4,7 @@
 @section('content')
     <center>
         <p><b><h2>Next Song</h2></b></p>
-        @if(count($firstrequest) != 0)
+        @if(is_null($firstrequest) != 1)
                 <p><b><h3>{{$firstrequest->song_name}}</h3></b></p>
                 <p><b><h4>{{$firstrequest->artist}}<b></h4></p>
                 <p>{{$firstrequest->origin}}</p>
